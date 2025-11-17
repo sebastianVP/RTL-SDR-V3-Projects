@@ -71,4 +71,59 @@ RTL-SDR-V3-Projects/
 
 ```bash
 C:\rtl-sdr\
+C:\rtl-sdr\librtlsdr.dll
+C:\rtl-sdr\rtl_test.exe
+C:\rtl-sdr\rtl_tcp.exe
 ```
+
+
+## ✅ 2. Instalar la librería nativa `librtlsdr.dll`
+
+Para que Python pueda usar el dongle, Windows debe encontrar la DLL.
+
+### Opción recomendada
+
+Copiar:
+```yaml
+C:\rtl-sdr\librtlsdr.dll
+a 
+C:\Windows\System32\
+```
+
+Esto hace que cualquier programa—including Python—encuentre la librería automáticamente.
+
+## ✅ 3. Instalar el driver correcto con Zadig (OBLIGATORIO)
+
+1. Abrir Zadig: https://zadig.akeo.ie/
+2. Ir a **Options → List All Devices**
+3. Seleccionar uno de estos:
+   - **Bulk-In, Interface 0**
+   - **RTL2832U**
+   - **Realtek RTL2838UHIDIR**
+4. Instalar o reemplazar el driver por:
+```yaml
+⚠ Instalarlo **solo en Interface 0**, no en Interface 1.
+```
+---
+
+## ✅ 4. Verificar que todo quedó OK
+
+Ejecutar:
+
+C:\rtl-sdr\rtl_test.exe -t
+
+```yaml
+Copiar código
+
+- Si ves errores → el driver NO está bien instalado.  
+- Si todo corre sin error → Python ya puede usar tu RTL-SDR.
+```
+---
+
+## ✅ 5. Probar desde Python
+
+```python
+from rtlsdr import RtlSdr
+sdr = RtlSdr()
+```
+Si no aparece ningún error, la instalación está completa y funcional.
