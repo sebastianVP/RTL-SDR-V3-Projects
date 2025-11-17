@@ -59,3 +59,16 @@ RTL-SDR-V3-Projects/
 ├── adsb_tracker/ # Proyecto 2: Aviones ADS-B
 └── noaa_receiver/ # Proyecto 3: Satélites meteorológicos
 ```
+## Instalación correcta de RTL-SDR + librtlsdr.dll en Windows
+
+### ✅ 1. Crear carpeta para los binarios
+
+1. Descargar los binarios RTL-SDR para Windows desde:  
+   https://github.com/librtlsdr/librtlsdr/releases/latest
+2. Descargar el archivo **win64.zip**.
+   https://github.com/librtlsdr/librtlsdr/releases/download/v0.9.0/rtlsdr-bin-w64_static.zip
+3. Extraer todo en:
+
+```bash
+C:\rtl-sdr\
+```
