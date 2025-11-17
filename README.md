@@ -81,7 +81,7 @@ C:\rtl-sdr\rtl_tcp.exe
 
 Para que Python pueda usar el dongle, Windows debe encontrar la DLL.
 
-### Opción recomendada
+### Opción A recomendada
 
 Copiar:
 ```yaml
@@ -91,6 +91,16 @@ C:\Windows\System32\
 ```
 
 Esto hace que cualquier programa—including Python—encuentre la librería automáticamente.
+
+### Opción B
+
+1. Agrega la ruta donde extrajiste librtlsdr.dll a la variable de entorno PATH:
+
+    * Windows → Buscar “Editar variables de entorno”.
+
+    * En “Variables del sistema” → Path → “Editar” → “Nuevo” → C:\rtl-sdr\bin (o donde tengas librtlsdr.dll).
+
+* Reinicia tu terminal de PowerShell o VSCode después de cambiar el PATH.
 
 ## ✅ 3. Instalar el driver correcto con Zadig (OBLIGATORIO)
 
